@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Системное программирование\Редактор персонажей\WpfApp\WpfApp\obj\Debug\
+E:\Системное программирование\Редактор персонажей\WpfApp\obj\Debug\
 WpfApp
 none
 false
 DEBUG;TRACE
-D:\Системное программирование\Редактор персонажей\WpfApp\WpfApp\App.xaml
-1219584333
-
-6-502434485
-13-1310406943
-MainWindow.xaml;
+E:\Системное программирование\Редактор персонажей\WpfApp\App.xaml
+5-747749365
+2-1973751098
+12-950694064
+361557369015
+MainWindow.xaml;MyPages\CreateCharacterPage.xaml;MyPages\ListCharacterPage.xaml;MyPages\LoadCharacterPage.xaml;MyPages\MainPage.xaml;
 
 True
 

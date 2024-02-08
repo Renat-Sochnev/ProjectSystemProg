@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using WpfApp.MyClasses;
 
 namespace WpfApp
 {
@@ -13,5 +14,6 @@ namespace WpfApp
     /// </summary>
     public partial class App : Application
     {
+        public static Character selectedCharacter {  get; set; }
     }
 }

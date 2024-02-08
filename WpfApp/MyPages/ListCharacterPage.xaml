@@ -1,0 +1,53 @@
+﻿<Page x:Class="WpfApp.MyPages.ListCharacterPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp.MyPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ListCharacterPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+            <TextBlock Text="Поиск по имени: "/>
+            <TextBox x:Name="NameTb"
+                     Width="150" TextChanged="NameTb_TextChanged"/>
+
+            <TextBlock Text="Выборка по классу: "
+                       Margin="40 0 0 0"/>
+            <ComboBox Name="ClassNameCb"
+                      Width="130" SelectionChanged="ClassNameCb_SelectionChanged"/>
+        </StackPanel>
+
+        <ListView Grid.Row="1" 
+                  HorizontalAlignment="Center"
+                  Grid.RowSpan="3"
+                  Name="CharacterList" SelectionChanged="CharacterList_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header="Имя персонажа" DisplayMemberBinding="{Binding Name}"/>
+                        <GridViewColumn Header="Класс персонажа" DisplayMemberBinding="{Binding ClassName}"/>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Button x:Name="GoMAinPageBtn"
+                Content="На главную"
+                Grid.Row="4"
+                Width="100"
+                Height="30" Click="GoMAinPageBtn_Click"/>
+    </Grid>
+</Page>

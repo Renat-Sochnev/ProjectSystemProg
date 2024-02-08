@@ -1,0 +1,225 @@
+﻿<Page x:Class="WpfApp.MyPages.LoadCharacterPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp.MyPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="LoadCharacterPage">
+
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        
+        
+        
+
+        <StackPanel VerticalAlignment="Center"
+                    Grid.RowSpan="4"
+                    Margin="150 0 0 0">
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Имя персонажа: "/>
+                <TextBlock Name="NameTb"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Класс персонажа: "/>
+                <TextBlock Name="ClassNameTb"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Уровень: "/>
+                <TextBlock Name="LevelTb"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Опыт: "/>
+                <TextBlock Name="ExpirienceTb"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal"
+                        Margin="0 0 0 5">
+                <Button x:Name="Increase500ExpirienceBtn"
+                        Content="+500"
+                        Width="40"
+                        Height="15"
+                        Padding="0 -2 0 0" Click="Increase500ExpirienceBtn_Click"/>
+                <Button x:Name="Increase1000ExpirienceBtn"
+                        Content="+1000"
+                        Width="40"
+                        Height="15"
+                        Padding="0 -2 0 0"
+                        Margin="15 0 0 0" Click="Increase1000ExpirienceBtn_Click"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Очки улучшения: "/>
+                <TextBlock Name="StatPointsTb"/>
+            </StackPanel>
+            
+            
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Сила: "/>
+                <TextBlock x:Name="StrengthTb"/>
+                <TextBlock Text="   Максимум: "/>
+                <TextBlock Name="MaxStrengthTb"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        Margin="0 0 0 5">
+                <Button x:Name="DecreaseStrengthBtn"
+                        Content="-"
+                        Width="15"
+                        Height="15"
+                        Padding="0 -2 0 0" Click="DecreaseStrengthBtn_Click"/>
+                <Button x:Name="IncreaseStrengthBtn"
+                        Content="+"
+                        Width="15"
+                        Height="15"
+                        Padding="0 -2 0 0"
+                        Margin="15 0 0 0" Click="IncreaseStrengthBtn_Click"/>
+            </StackPanel>
+            
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Ловкость: "/>
+                <TextBlock x:Name="DexterityTb"/>
+                <TextBlock Text="   Максимум: "/>
+                <TextBlock Name="MaxDexterityTb"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        Margin="0 0 0 5">
+                <Button x:Name="DecreaseDexterityBtn"
+                        Content="-"
+                        Width="15"
+                        Height="15"
+                        Padding="0 -2 0 0" Click="DecreaseDexterityBtn_Click"/>
+                <Button x:Name="IncreaseDexterityBtn"
+                        Content="+"
+                        Width="15"
+                        Height="15"
+                        Padding="0 -2 0 0"
+                        Margin="15 0 0 0" Click="IncreaseDexterityBtn_Click"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Интеллект: "/>
+                <TextBlock x:Name="InteligenceTb"/>
+                <TextBlock Text="   Максимум: "/>
+                <TextBlock Name="MaxInteligenceTb"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        Margin="0 0 0 5">
+                <Button x:Name="DecreaseInteligenceBtn"
+                        Content="-"
+                        Width="15"
+                        Height="15"
+                        Padding="0 -2 0 0" Click="DecreaseInteligenceBtn_Click"/>
+                <Button x:Name="IncreaseInteligenceBtn"
+                        Content="+"
+                        Width="15"
+                        Height="15"
+                        Padding="0 -2 0 0"
+                        Margin="15 0 0 0" Click="IncreaseInteligenceBtn_Click"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Живучесть: "/>
+                <TextBlock x:Name="VitalityTb"/>
+                <TextBlock Text="   Максимум: "/>
+                <TextBlock Name="MaxVitalityTb"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        Margin="0 0 0 5">
+                <Button x:Name="DecreaseVitalityBtn"
+                        Content="-"
+                        Width="15"
+                        Height="15"
+                        Padding="0 -2 0 0" Click="DecreaseVitalityBtn_Click"/>
+                <Button x:Name="IncreaseVitalityBtn"
+                        Content="+"
+                        Width="15"
+                        Height="15"
+                        Padding="0 -2 0 0"
+                        Margin="15 0 0 0" Click="IncreaseVitalityBtn_Click"/>
+            </StackPanel>
+
+        </StackPanel>
+        
+        <StackPanel VerticalAlignment="Center"
+                    Grid.Column="1"
+                    Grid.RowSpan="4">
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Здоровье: "/>
+                <TextBlock x:Name="HealthTb"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Мана: "/>
+                <TextBlock x:Name="ManaTb"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Физический урон: "/>
+                <TextBlock x:Name="PhysicalDamageTb"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Броня: "/>
+                <TextBlock x:Name="ArmorTb"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Магический урон: "/>
+                <TextBlock x:Name="MagicDamageTb"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Магическая защита: "/>
+                <TextBlock x:Name="MagicDefenseTb"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Критический шанс: "/>
+                <TextBlock x:Name="CriticalChanseTb"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Критический урон: "/>
+                <TextBlock x:Name="CriticalDamageTb"/>
+            </StackPanel>
+
+        </StackPanel>
+
+        <Button Name="GoMainPageBtn"
+                Content="На главную" 
+                Click="GoMainPageBtn_Click"
+                Grid.Row="4"
+                Width="100"
+                Height="30"
+                VerticalAlignment="Top"/>
+        
+        
+        <Button Name="GoListCharacterBtn"
+                Content="Загрузить другого персонажа" 
+                Grid.Row="4"
+                Grid.Column="1"
+                Width="200"
+                Height="30"
+                VerticalAlignment="Top" Click="GoListCharacterBtn_Click"/>
+    </Grid>
+</Page>
