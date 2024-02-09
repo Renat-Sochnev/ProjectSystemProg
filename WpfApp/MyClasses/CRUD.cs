@@ -34,12 +34,10 @@ namespace WpfApp.MyClasses
 
         public static List<Character> GetAllCharacters()
         {
-            List<Character> list = new List<Character>();
             var client = new MongoClient("mongodb://localhost");
             var database = client.GetDatabase("Game");
             var collection = database.GetCollection<Character>("CharacterCollection");
-            list = collection.Find("{}").ToList();
-            return list;
+            return collection.Find("{}").ToList();
         }
         public static List<Character> GetBaseCharacters()
         {
@@ -56,18 +54,20 @@ namespace WpfApp.MyClasses
             var client = new MongoClient("mongodb://localhost");
             var database = client.GetDatabase("Game");
             var collection = database.GetCollection<Character>("CharacterCollection");
-            var filter = new BsonDocument("Name", character.Name);
-            var updateSettings = new BsonDocument("$set", new BsonDocument 
-            { 
-                { "Strength", character.Strength }, 
-                { "Dexterity", character.Dexterity },
-                { "Inteligence", character.Inteligence },
-                { "Vitality", character.Vitality },
-                { "Expirience", character.Expirience },
-                { "Level", character.Level },
-                { "StatPoints", character.StatPoints },
-            });
-            collection.UpdateOne(filter, updateSettings);
+            var filter = Builders<Character>.Filter.Eq(x => x._id, character._id);
+            //var filter = new BsonDocument("Name", character.Name);
+            //var updateSettings = new BsonDocument("$set", new BsonDocument
+            //{
+            //    { "Strength", character.Strength },
+            //    { "Dexterity", character.Dexterity },
+            //    { "Inteligence", character.Inteligence },
+            //    { "Vitality", character.Vitality },
+            //    { "Expirience", character.Expirience },
+            //    { "Level", character.Level },
+            //    { "StatPoints", character.StatPoints },
+            //});
+            //collection.UpdateOne(filter, updateSettings);
+            collection.ReplaceOne(filter, character);
         }
     }
 }

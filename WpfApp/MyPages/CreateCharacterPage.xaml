@@ -45,29 +45,21 @@
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Сила: "/>
                 <TextBlock x:Name="StrengthTb"/>
-                <TextBlock Text="   Максимум: "/>
-                <TextBlock Name="MaxStrengthTb"/>
             </StackPanel>     
             
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Ловкость: "/>
                 <TextBlock x:Name="DexterityTb"/>
-                <TextBlock Text="   Максимум: "/>
-                <TextBlock Name="MaxDexterityTb"/>
             </StackPanel>       
             
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Интеллект: "/>
                 <TextBlock x:Name="InteligenceTb"/>
-                <TextBlock Text="   Максимум: "/>
-                <TextBlock Name="MaxInteligenceTb"/>
             </StackPanel>
             
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Живучесть: "/>
                 <TextBlock x:Name="VitalityTb"/>
-                <TextBlock Text="   Максимум: "/>
-                <TextBlock Name="MaxVitalityTb"/>
             </StackPanel>
             
             <StackPanel Orientation="Horizontal">

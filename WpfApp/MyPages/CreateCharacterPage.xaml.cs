@@ -32,14 +32,10 @@ namespace WpfApp.MyPages
         private void ClassCharacterCb_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             character = ClassCharacterCb.SelectedItem as Character;
-            StrengthTb.Text = character.Strength.ToString();
-            MaxStrengthTb.Text = character.MaxStrength.ToString();
-            DexterityTb.Text = character.Dexterity.ToString();
-            MaxDexterityTb.Text = character.MaxDexterity.ToString();
-            InteligenceTb.Text = character.Inteligence.ToString();
-            MaxInteligenceTb.Text = character.MaxInteligence.ToString();
-            VitalityTb.Text = character.Vitality.ToString();
-            MaxVitalityTb.Text = character.MaxVitality.ToString();
+            StrengthTb.Text = character.Strength.ToString() + "/" + character.MaxStrength.ToString();
+            DexterityTb.Text = character.Dexterity.ToString() + "/" + character.MaxDexterity.ToString();
+            InteligenceTb.Text = character.Inteligence.ToString() + "/" + character.MaxInteligence;
+            VitalityTb.Text = character.Vitality.ToString() + "/" + character.MaxVitality.ToString();
 
             HealthTb.Text = character.Health.ToString();
             ManaTb.Text = character.Mana.ToString();

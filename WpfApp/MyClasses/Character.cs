@@ -41,12 +41,11 @@ namespace WpfApp.MyClasses
             MinVitality = minVitality;
         }
 
-        [BsonIgnore]
         public ObjectId _id;
         [BsonIgnoreIfNull]
         public string Name { get; set; }
         public string ClassName { get; set; }
-        [BsonIgnoreIfDefault]
+        [BsonIgnoreIfDefault] 
         public int MinStrength { get; set; }
         public int MaxStrength { get; set; }
         public int Strength { get; set; }
@@ -54,11 +53,11 @@ namespace WpfApp.MyClasses
         public int MinDexterity { get; set; }
         public int MaxDexterity { get; set; }
         public int Dexterity { get; set; }
-        [BsonIgnoreIfDefault] 
+        [BsonIgnoreIfDefault]
         public int MinInteligence { get; set; }
         public int MaxInteligence { get; set; }
         public int Inteligence { get; set; }
-        [BsonIgnoreIfDefault] 
+        [BsonIgnoreIfDefault]
         public int MinVitality { get; set; }
         public int MaxVitality { get; set; }
         public int Vitality { get; set; }
