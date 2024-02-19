@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,7 +44,7 @@ namespace WpfApp.MyPages
             ArmorTb.Text = character.Armor.ToString();
             MagicDamageTb.Text = character.MagicDamage.ToString();
             MagicDefenseTb.Text = character.MagicDefense.ToString();
-            CriticalChanseTb.Text = character.CriticalChanse.ToString();
+            CriticalChanseTb.Text = character.CriticalChance.ToString();
             CriticalDamageTb.Text = character.CriticalDamage.ToString();
         }
 
@@ -54,8 +55,8 @@ namespace WpfApp.MyPages
 
         private void CreateBtn_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
+            //try
+            //{
                 StringBuilder sb = new StringBuilder();
                 if(NameTb.Text == "")
                 {
@@ -76,18 +77,20 @@ namespace WpfApp.MyPages
                 else
                 {
                     character.Name = NameTb.Text;
-                    CRUD.CreateCharacter(new Character(character.Name, character.ClassName, 
-                        character.Strength, character.MaxStrength, character.Dexterity, character.MaxDexterity, 
-                        character.Inteligence, character.MaxInteligence, character.Vitality, character.MaxVitality));
+                    character.MinStrength = character.Strength;
+                    character.MinDexterity = character.Dexterity;
+                    character.MinInteligence = character.Inteligence;
+                    character.MinVitality = character.Vitality;
+                    CRUD.CreateNamedCharacter(character);
                     MessageBox.Show("Персонаж успешно создан");
                     App.selectedCharacter = CRUD.GetCharacter(character.Name);
                     NavigationService.Navigate(new LoadCharacterPage());
                 }
-        }
-            catch
-            {
-                MessageBox.Show("Возникла ошибка");
-            }
+        //}
+        //    catch
+        //    {
+        //        MessageBox.Show("Возникла ошибка");
+        //    }
         }
     }
 }

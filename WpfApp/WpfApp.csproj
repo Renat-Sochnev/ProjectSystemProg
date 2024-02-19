@@ -153,6 +153,12 @@
   <ItemGroup>
     <Compile Include="MyClasses\Character.cs" />
     <Compile Include="MyClasses\CRUD.cs" />
+    <Compile Include="Extra\Rogue.cs" />
+    <Compile Include="Extra\Warrior.cs" />
+    <Compile Include="MyClasses\Weapon.cs" />
+    <Compile Include="Extra\Wizard.cs" />
+    <Compile Include="MyClasses\WeaponClasses\Dagger.cs" />
+    <Compile Include="MyClasses\WeaponClasses\Wand.cs" />
     <Compile Include="MyPages\CreateCharacterPage.xaml.cs">
       <DependentUpon>CreateCharacterPage.xaml</DependentUpon>
     </Compile>

@@ -20,7 +20,7 @@
         <StackPanel Orientation="Horizontal"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center">
-            <TextBlock Text="Поиск по имени: "/>
+            <TextBlock Text="Поиск: "/>
             <TextBox x:Name="NameTb"
                      Width="150" TextChanged="NameTb_TextChanged"/>
 
@@ -33,7 +33,7 @@
         <ListView Grid.Row="1" 
                   HorizontalAlignment="Center"
                   Grid.RowSpan="3"
-                  Name="CharacterList" SelectionChanged="CharacterList_SelectionChanged">
+                  Name="CharacterList" SelectionChanged="CharacterList_SelectionChanged" d:ItemsSource="{d:SampleData ItemCount=5}">
             <ListView.View>
                 <GridView>
                     <GridView.Columns>

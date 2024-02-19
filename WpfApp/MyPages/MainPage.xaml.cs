@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WpfApp.MyClasses;
+using WpfApp.MyClasses.WeaponClasses;
 
 namespace WpfApp.MyPages
 {
@@ -24,9 +25,14 @@ namespace WpfApp.MyPages
         public MainPage()
         {
             InitializeComponent();
-            //    CRUD.CreateCharacter(new Character("WARRIOR", 30, 250, 15, 80, 10, 50, 25, 100));
-            //    CRUD.CreateCharacter(new Character("ROGUE", 20, 65, 30, 250, 15, 70, 20, 80));
-            //    CRUD.CreateCharacter(new Character("WIZARD", 15, 45, 20, 80, 35, 250, 15, 70));
+            //CRUD.CreateBaseCharacter(new Character("WARRIOR", 30, 250, 15, 80, 10, 50, 25, 100));
+            //CRUD.CreateBaseCharacter(new Character("ROGUE", 20, 65, 30, 250, 15, 70, 20, 80));
+            //CRUD.CreateBaseCharacter(new Character("WIZARD", 15, 45, 20, 80, 35, 250, 15, 70));
+
+
+            //CRUD.CreateWeapon(new Wand("Волшебная палочка"));
+            //CRUD.CreateWeapon(new Wand("Зачарованная волшебная палочка", 2));
+            //CRUD.CreateWeapon(new Wand("Редкая волшебная палочка", 3));
         }
 
         private void CreateCharacterBtn_Click(object sender, RoutedEventArgs e)

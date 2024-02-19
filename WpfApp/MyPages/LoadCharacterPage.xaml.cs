@@ -29,23 +29,27 @@ namespace WpfApp.MyPages
             character = App.selectedCharacter;
             NameTb.Text = character.Name;
             ClassNameTb.Text = character.ClassName;
-            Calculating();
+
+            List<Weapon> weapons = CRUD.GetAllWeapons();
+            weapons.Insert(0, new Weapon("Нет"));
+            WeaponCb.ItemsSource = weapons;
+            WeaponCb.DisplayMemberPath = "Name";
+            if(character.Weapon != null)
+                WeaponCb.Text = character.Weapon.Name;
+            else
+                WeaponCb.SelectedIndex = 0;
         }
 
         private void Calculating()
         {
             CRUD.UpdateCharacter(character);
             LevelTb.Text = character.Level.ToString();
-            ExpirienceTb.Text = character.Expirience.ToString();
+            ExpirienceTb.Text = character.Experience.ToString();
             StatPointsTb.Text = character.StatPoints.ToString();
-            StrengthTb.Text = character.Strength.ToString();
-            MaxStrengthTb.Text = character.MaxStrength.ToString();
-            DexterityTb.Text = character.Dexterity.ToString();
-            MaxDexterityTb.Text = character.MaxDexterity.ToString();
-            InteligenceTb.Text = character.Inteligence.ToString();
-            MaxInteligenceTb.Text = character.MaxInteligence.ToString();
-            VitalityTb.Text = character.Vitality.ToString();
-            MaxVitalityTb.Text = character.MaxVitality.ToString();
+            StrengthTb.Text = character.Strength.ToString() + "/" + character.MaxStrength.ToString();
+            DexterityTb.Text = character.Dexterity.ToString() + "/" + character.MaxDexterity.ToString();
+            InteligenceTb.Text = character.Inteligence.ToString() + "/" + character.MaxInteligence.ToString();
+            VitalityTb.Text = character.Vitality.ToString() + "/" + character.MaxVitality.ToString();
 
             HealthTb.Text = character.Health.ToString();
             ManaTb.Text = character.Mana.ToString();
@@ -53,7 +57,7 @@ namespace WpfApp.MyPages
             ArmorTb.Text = character.Armor.ToString();
             MagicDamageTb.Text = character.MagicDamage.ToString();
             MagicDefenseTb.Text = character.MagicDefense.ToString();
-            CriticalChanseTb.Text = character.CriticalChanse.ToString();
+            CriticalChanseTb.Text = character.CriticalChance.ToString();
             CriticalDamageTb.Text = character.CriticalDamage.ToString();
         }
 
@@ -143,15 +147,15 @@ namespace WpfApp.MyPages
         }
         private void IncreaseExpirience(int increase)
         {
-            character.Expirience += increase;
+            character.Experience += increase;
             int count = 0;
-            for (int i = 0; i <= character.Level + 1; i++)
+            for (int i = 1; i <= character.Level; i++)
             {
                 count += i;
             }
-            if (character.Expirience - count * 1000 >= 0)
+            if (character.Experience - count * 1000 >= 0)
             {
-                if (character.Level < 99)
+                if (character.Level < 50)
                 {
                     character.Level++;
                     character.StatPoints += 5;
@@ -172,6 +176,15 @@ namespace WpfApp.MyPages
         private void GoListCharacterBtn_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new ListCharacterPage());
+        }
+
+        private void WeaponCb_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(WeaponCb.SelectedIndex == 0)
+                character.UnequipWeapon();
+            else
+                character.EquipWeapon(WeaponCb.SelectedItem as Weapon);
+            Calculating();
         }
     }
 }

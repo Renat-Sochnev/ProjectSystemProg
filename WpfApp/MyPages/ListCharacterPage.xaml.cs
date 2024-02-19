@@ -25,16 +25,16 @@ namespace WpfApp.MyPages
         {
             InitializeComponent();
             CharacterList.ItemsSource = CRUD.GetNamedCharacters();
-            List<Character> classList = CRUD.GetBaseCharacters();
-            classList.Insert(0, new Character("Все"));
-            ClassNameCb.ItemsSource = classList;
+            List<Character> classes = CRUD.GetBaseCharacters();
+            classes.Insert(0, new Character("Все"));
+            ClassNameCb.ItemsSource = classes;
             ClassNameCb.DisplayMemberPath = "ClassName";
         }
         private void Refresh()
         {
             List<Character> characters = CRUD.GetNamedCharacters();
-            if(ClassNameCb.SelectedIndex > 0)
-                characters = characters.Where(x => x.ClassName == (ClassNameCb.SelectedItem as Character).ClassName).ToList();
+            if (ClassNameCb.SelectedIndex > 0)
+                characters = characters.Where(x => x.ClassName == (ClassNameCb.SelectedItem as string)).ToList();
             if (NameTb.Text != "")
                 characters = characters.Where(x => x.Name.Contains(NameTb.Text)).ToList();
             CharacterList.ItemsSource = characters;
